@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBT ASAS IPS SMPN 3 WAY PENGUBUAN - NETI LESTARI, S.Pd. (2026/2027)</title>
+    <title>Latihan ASAS IPS Kelas VIII - NETI LESTARI, S.Pd. (2026/2027)</title>
+    <meta name="description" content="Latihan Asesmen Sumatif Akhir Semester (ASAS) IPS Kelas VIII, Tahun Pelajaran 2026/2027. Ini latihan, bukan ujian resmi.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231e3a8a'%3E%3Cpath d='M12 3 1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z'/%3E%3C/svg%3E">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Plus Jakarta Sans (utama) + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
                     },
                     colors: {
                         primary: {
                             50: '#eef2ff',
-                            100: '#e0e7ff',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                            800: '#3730a3',
-                            900: '#312e81',
+                            100: '#dbeafe',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                            900: '#172554',
                         }
                     }
                 }
@@ -33,31 +37,65 @@
         }
     </script>
     <style>
-        /* Custom scrollbar for clean look */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
+        /* ---- Desain profesional: navy + emas, rapi & tenang ---- */
+        body {
+            background-color: #f2f4f9;
+            background-image: radial-gradient(circle at 1px 1px, rgba(30,58,138,.055) 1px, transparent 0);
+            background-size: 26px 26px;
+            -webkit-font-smoothing: antialiased;
         }
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #eef1f6; }
+        ::-webkit-scrollbar-thumb { background: #c3cad8; border-radius: 9999px; border: 2px solid #eef1f6; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .fade-in { animation: fadeIn .25s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Kartu login: garis aksen gradasi di atas */
+        .login-card { position: relative; overflow: hidden; }
+        .login-card::before {
+            content: ""; position: absolute; inset: 0 0 auto 0; height: 5px;
+            background: linear-gradient(90deg, #172554 0%, #1d4ed8 55%, #c9a227 100%);
         }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 9999px;
+        /* Input & select: fokus jelas, tidak berantakan */
+        input, select, textarea { font-family: inherit; }
+        input:focus, select:focus, textarea:focus { border-color: #1d4ed8 !important; box-shadow: 0 0 0 3px rgba(29,78,216,.14); }
+        /* Tombol utama */
+        .btn-start {
+            background: linear-gradient(135deg, #172554 0%, #1e40af 55%, #2563eb 100%);
+            box-shadow: 0 10px 24px -8px rgba(30,58,138,.55);
+            letter-spacing: .02em;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
+        .btn-start:hover { transform: translateY(-1px); box-shadow: 0 14px 28px -8px rgba(30,58,138,.6); filter: brightness(1.05); }
+        .btn-start:active { transform: translateY(0); }
+        /* Kartu info di hero */
+        .info-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+        .info-card:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -10px rgba(15,23,42,.18); border-color: #c7d2fe; }
+        /* Header lengket yang bersih */
+        .app-header { background: rgba(255,255,255,.92); backdrop-filter: blur(10px); box-shadow: 0 1px 0 rgba(15,23,42,.07), 0 6px 20px -12px rgba(15,23,42,.18); }
+        /* Langkah login */
+        .step-num {
+            width: 26px; height: 26px; margin: 0 auto 6px; display: flex; align-items: center; justify-content: center;
+            border-radius: 9999px; background: #eef2ff; color: #1e40af; font-size: 12px; font-weight: 800;
+            border: 1px solid #dbeafe;
         }
-        .fade-in {
-            animation: fadeIn 0.25s ease-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        /* Kartu soal & navigasi */
+        .question-card { box-shadow: 0 12px 32px -16px rgba(15,23,42,.22); }
+        .nav-num { transition: transform .15s ease, box-shadow .15s ease; }
+        .nav-num:hover { transform: translateY(-1px); }
+        /* Tabel admin */
+        table thead th { background: #f8fafc; }
+        table tbody tr { transition: background .15s ease; }
+        .stat-card { transition: transform .2s ease, box-shadow .2s ease; }
+        .stat-card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -12px rgba(15,23,42,.22); }
+        /* Pilihan jawaban: umpan balik hover lebih halus */
+        #q-answer-container button { transition: all .18s ease; }
+        #q-answer-container button:hover { transform: translateY(-1px); }
+        button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+        @media (max-width: 640px) { body { background-size: 20px 20px; } }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col selection:bg-indigo-100 selection:text-indigo-800">
+<body class="bg-[#f2f4f9] text-slate-800 font-sans min-h-screen flex flex-col selection:bg-indigo-100 selection:text-indigo-800">
 
     <!-- ==================== GLOBAL TOAST / MESSAGE BOX ==================== -->
     <div id="toast-container" class="fixed top-4 right-4 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
@@ -97,8 +135,8 @@
                     <i class="fa-solid fa-user-shield"></i>
                 </div>
                 <h2 class="text-xl font-bold text-slate-900">Login Panel Admin / Guru</h2>
-                <p id="modal-admin-identity" class="text-xs font-semibold text-indigo-600 mt-1">SMPN 3 WAY PENGUBUAN • NETI LESTARI, S.Pd.</p>
-                <p class="text-[11px] text-slate-400 mt-0.5">MGMP IPS SMP Kabupaten Lampung Tengah</p>
+                <p id="modal-admin-identity" class="text-xs font-semibold text-indigo-600 mt-1">Latihan ASAS IPS Kelas VIII • NETI LESTARI, S.Pd.</p>
+                <p class="text-[11px] text-slate-400 mt-0.5">IPS Kelas VIII • Tahun Pelajaran 2026/2027</p>
             </div>
             <form id="admin-login-form" onsubmit="handleAdminLogin(event)" class="space-y-4">
                 <div>
@@ -124,19 +162,20 @@
 
     <!-- ==================== VIEW 1: LANDING / STUDENT LOGIN ==================== -->
     <div id="view-login" class="flex-1 flex flex-col">
+        <div class="h-1.5 bg-gradient-to-r from-[#172554] via-[#1d4ed8] to-[#c9a227]"></div>
         <!-- Top Navbar -->
-        <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+        <header class="app-header border-b border-slate-200 sticky top-0 z-30">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-blue-700 text-white flex items-center justify-center font-bold text-lg shadow-sm">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#172554] to-[#1d4ed8] text-white flex items-center justify-center font-bold text-lg shadow-md shadow-blue-900/20 ring-1 ring-white/20">
                         <i class="fa-solid fa-graduation-cap"></i>
                     </div>
                     <div>
                         <div class="flex items-center gap-2">
-                            <span class="font-bold text-slate-900 text-sm sm:text-base tracking-tight">CBT ASAS IPS • <span id="nav-school-title" class="text-indigo-700">SMPN 3 WAY PENGUBUAN</span></span>
+                            <span class="font-bold text-slate-900 text-sm sm:text-base tracking-tight"><span id="nav-school-title" class="text-indigo-700">Latihan ASAS IPS Kelas VIII</span></span>
                             <span class="hidden md:inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-indigo-50 text-indigo-700 rounded-full border border-indigo-100">TA 2026/2027</span>
                         </div>
-                        <p class="text-xs text-slate-500">Guru Mapel: <strong id="nav-teacher-name" class="text-slate-700">NETI LESTARI, S.Pd.</strong> • Kab. Lampung Tengah</p>
+                        <p class="text-xs text-slate-500">Disusun oleh <strong id="nav-teacher-name" class="text-slate-700">NETI LESTARI, S.Pd.</strong> • IPS Kelas VIII</p>
                     </div>
                 </div>
                 <button onclick="openAdminLoginModal()" class="px-3.5 py-2 rounded-xl bg-slate-100 hover:bg-indigo-50 text-slate-700 hover:text-indigo-700 border border-slate-200 hover:border-indigo-200 text-xs sm:text-sm font-semibold transition flex items-center gap-2">
@@ -152,37 +191,37 @@
             <div class="lg:col-span-6 space-y-6">
                 <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold">
                     <i class="fa-solid fa-school"></i>
-                    <span id="hero-school-pill">SMPN 3 WAY PENGUBUAN • KURIKULUM MERDEKA</span>
+                    <span id="hero-school-pill">Latihan ASAS IPS Kelas VIII • KURIKULUM MERDEKA</span>
                 </div>
-                <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 leading-tight">
-                    CBT ASAS Ganjil IPS Kelas VIII <span id="hero-school-heading" class="text-indigo-600 block sm:inline">SMPN 3 WAY PENGUBUAN</span>
+                <h1 class="text-2xl sm:text-[2.6rem] sm:leading-[1.15] font-extrabold tracking-tight text-slate-900 leading-tight">
+                    <span id="hero-school-heading" class="text-[#1e40af]">Latihan ASAS IPS Kelas VIII</span>
                 </h1>
-                <div class="flex flex-wrap items-center gap-2.5 bg-white border border-indigo-100 rounded-2xl p-3.5 shadow-2xs">
+                <div class="flex flex-wrap items-center gap-2.5 bg-white border border-indigo-100 rounded-2xl p-3.5 shadow-sm">
                     <div class="w-10 h-10 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center text-lg shrink-0">
                         <i class="fa-solid fa-chalkboard-user"></i>
                     </div>
                     <div>
-                        <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Guru Mata Pelajaran IPS / Penyusun</div>
+                        <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-400">Penyusun Soal</div>
                         <div id="hero-teacher-name" class="text-sm sm:text-base font-extrabold text-slate-900">NETI LESTARI, S.Pd.</div>
                     </div>
                 </div>
                 <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    Selamat datang di portal Asesmen Sumatif Akhir Semester (ASAS) Ganjil Tahun Pelajaran <strong>2026–2027</strong> mengacu pada Kisi-Kisi <strong>MGMP IPS Kabupaten Lampung Tengah</strong>. Pastikan koneksi stabil dan isi identitas peserta dengan benar sebelum memulai ujian.
+                    Selamat datang di <strong>Latihan ASAS IPS Kelas VIII</strong> Tahun Pelajaran <strong>2026–2027</strong>. Ini <strong>latihan, bukan ujian resmi</strong> — boleh diulang untuk mengasah pemahamanmu sebelum ASAS. Isi nama dan kelas dengan benar, lalu mulai mengerjakan.
                 </p>
 
                 <!-- Info Cards Grid -->
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-                    <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm">
+                    <div class="info-card bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm">
                         <div class="text-indigo-600 text-lg mb-1"><i class="fa-solid fa-list-check"></i></div>
                         <div class="text-xl font-bold text-slate-900">45 Soal</div>
                         <div class="text-xs text-slate-500">5 Bentuk Variasi Soal</div>
                     </div>
-                    <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm">
+                    <div class="info-card bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm">
                         <div class="text-emerald-600 text-lg mb-1"><i class="fa-solid fa-clock"></i></div>
                         <div id="info-duration-display" class="text-xl font-bold text-slate-900">90 Menit</div>
                         <div class="text-xs text-slate-500">Waktu Pengerjaan</div>
                     </div>
-                    <div class="bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm col-span-2 sm:col-span-1">
+                    <div class="info-card bg-white p-4 rounded-2xl border border-slate-200/80 shadow-sm col-span-2 sm:col-span-1">
                         <div class="text-amber-500 text-lg mb-1"><i class="fa-solid fa-award"></i></div>
                         <div id="info-kktp-display" class="text-xl font-bold text-slate-900">KKTP 75</div>
                         <div class="text-xs text-slate-500">Kriteria Ketuntasan</div>
@@ -221,14 +260,14 @@
 
             <!-- Right Login Card -->
             <div class="lg:col-span-6">
-                <div class="bg-white rounded-3xl shadow-xl shadow-slate-200/60 border border-slate-200/80 p-6 sm:p-8">
+                <div class="login-card bg-white rounded-3xl shadow-[0_24px_55px_-16px_rgba(23,37,84,.28)] border border-slate-200/80 p-6 sm:p-8 pt-8">
                     <div class="border-b border-slate-100 pb-4 mb-6">
                         <div class="flex flex-wrap items-center justify-between gap-2">
-                            <span id="school-name-badge" class="text-xs font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-md">SMPN 3 WAY PENGUBUAN</span>
+                            <span id="school-name-badge" class="text-xs font-bold text-indigo-700 bg-indigo-50 px-2.5 py-1 rounded-md">Latihan ASAS IPS Kelas VIII</span>
                             <span id="teacher-name-badge" class="text-xs font-semibold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md"><i class="fa-solid fa-user-tie text-indigo-600 mr-1"></i> NETI LESTARI, S.Pd.</span>
                         </div>
-                        <h2 class="text-xl font-bold text-slate-900 mt-2.5">Konfirmasi Data Peserta Ujian</h2>
-                        <p class="text-xs text-slate-500 mt-0.5">ASAS Ganjil IPS Kelas VIII • Tahun Pelajaran 2026/2027</p>
+                        <h2 class="text-xl font-bold text-slate-900 mt-2.5">Konfirmasi Data Peserta Latihan</h2>
+                        <p class="text-xs text-slate-500 mt-0.5">Latihan ASAS IPS Kelas VIII • Tahun Pelajaran 2026/2027</p>
                     </div>
 
                     <!-- Resume Alert if active session exists -->
@@ -236,7 +275,7 @@
                         <div class="flex items-start gap-3">
                             <i class="fa-solid fa-clock-rotate-left text-amber-600 mt-0.5"></i>
                             <div class="flex-1 text-xs">
-                                <p class="font-bold text-amber-900">Sesi Ujian Sebelumnya Ditemukan!</p>
+                                <p class="font-bold text-amber-900">Sesi Latihan Sebelumnya Ditemukan!</p>
                                 <p id="resume-student-info" class="mt-0.5 text-amber-800"></p>
                                 <div class="mt-2.5 flex gap-2">
                                     <button type="button" onclick="resumeSavedExam()" class="px-3 py-1.5 rounded-lg bg-amber-600 text-white font-semibold hover:bg-amber-700 transition">
@@ -262,7 +301,7 @@
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
                             <div>
                                 <label class="block text-xs font-semibold text-slate-700 mb-1.5">Kelas <span class="text-rose-500">*</span></label>
                                 <div class="relative">
@@ -283,51 +322,41 @@
                                     </select>
                                 </div>
                             </div>
-
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Nomor Peserta / NISN <span class="text-rose-500">*</span></label>
-                                <div class="relative">
-                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
-                                        <i class="fa-solid fa-id-card"></i>
-                                    </span>
-                                    <input type="text" id="student-nisn" required placeholder="Contoh: 0123456789"
-                                        class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none text-sm transition">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-semibold text-slate-700 mb-1.5">Token Ujian <span class="text-rose-500">*</span></label>
-                            <div class="relative">
-                                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
-                                    <i class="fa-solid fa-key"></i>
-                                </span>
-                                <input type="text" id="student-token" required placeholder="Masukkan token dari pengawas..."
-                                    class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 outline-none text-sm uppercase font-mono tracking-wider transition">
-                            </div>
-                            <p class="text-[11px] text-slate-400 mt-1">Token default ujian: <span id="hint-token" class="font-mono font-bold text-indigo-600">IPS2026</span></p>
                         </div>
 
                         <div class="pt-2">
-                            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 text-white font-bold text-sm shadow-lg shadow-indigo-200 transition flex items-center justify-center gap-2">
-                                <span>MULAI KERJAKAN UJIAN</span>
+                            <button type="submit" class="btn-start w-full py-3.5 rounded-xl text-white font-bold text-sm transition flex items-center justify-center gap-2">
+                                <span>MULAI LATIHAN</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
                     </form>
+
+                    <div class="mt-6 pt-5 border-t border-slate-100">
+                        <div class="grid grid-cols-3 gap-2 text-center">
+                            <div><div class="step-num">1</div><p class="text-[11px] font-semibold text-slate-600 leading-tight">Isi nama<br>lengkap</p></div>
+                            <div><div class="step-num">2</div><p class="text-[11px] font-semibold text-slate-600 leading-tight">Pilih<br>kelas</p></div>
+                            <div><div class="step-num">3</div><p class="text-[11px] font-semibold text-slate-600 leading-tight">Mulai<br>latihan</p></div>
+                        </div>
+                        <p class="mt-4 flex items-center justify-center gap-1.5 text-[11px] text-slate-400 text-center">
+                            <i class="fa-solid fa-shield-halved text-emerald-500"></i>
+                            Jawaban tersimpan otomatis &nbsp;•&nbsp; 45 soal &nbsp;•&nbsp; 90 menit
+                        </p>
+                    </div>
                 </div>
             </div>
         </main>
 
-        <footer class="bg-white border-t border-slate-200 py-4 px-4 text-center text-xs text-slate-500">
-            &copy; 2026 CBT ASAS IPS <strong id="footer-school-name" class="text-slate-700">SMPN 3 WAY PENGUBUAN</strong> • Guru Mapel: <strong id="footer-teacher-name" class="text-slate-700">NETI LESTARI, S.Pd.</strong> • MGMP IPS Kab. Lampung Tengah
+        <footer class="bg-white border-t border-slate-200 py-5 px-4 text-center text-xs text-slate-500">
+            <p>&copy; 2026 <strong id="footer-school-name" class="text-slate-700">Latihan ASAS IPS Kelas VIII</strong></p>
+            <p class="mt-1">Disusun oleh <strong id="footer-teacher-name" class="text-slate-700">NETI LESTARI, S.Pd.</strong> &nbsp;•&nbsp; IPS Kelas VIII &nbsp;•&nbsp; Tahun Pelajaran 2026/2027</p>
         </footer>
     </div>
 
     <!-- ==================== VIEW 2: STUDENT EXAM INTERFACE ==================== -->
-    <div id="view-exam" class="hidden flex-1 flex flex-col min-h-screen bg-slate-100">
+    <div id="view-exam" class="hidden flex-1 flex flex-col min-h-screen bg-[#f2f4f9]">
         <!-- Sticky Exam Header -->
-        <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+        <header class="app-header border-b border-slate-200 sticky top-0 z-30">
             <div class="max-w-7xl mx-auto px-3 sm:px-6 h-16 flex items-center justify-between gap-2">
                 <!-- Student Identity -->
                 <div class="flex items-center gap-2.5 min-w-0">
@@ -336,8 +365,8 @@
                     </div>
                     <div class="min-w-0">
                         <h2 id="exam-header-name" class="text-xs sm:text-sm font-bold text-slate-900 truncate">Nama Siswa</h2>
-                        <p id="exam-header-meta" class="text-[11px] text-slate-500 truncate">Kelas VIII • NISN: -</p>
-                        <p id="exam-header-school" class="text-[10px] font-semibold text-indigo-600 truncate">SMPN 3 WAY PENGUBUAN • Guru: NETI LESTARI, S.Pd.</p>
+                        <p id="exam-header-meta" class="text-[11px] text-slate-500 truncate">Kelas VIII</p>
+                        <p id="exam-header-school" class="text-[10px] font-semibold text-indigo-600 truncate">Latihan ASAS IPS Kelas VIII • Penyusun: NETI LESTARI, S.Pd.</p>
                     </div>
                 </div>
 
@@ -385,11 +414,11 @@
             
             <!-- Left/Center: Question Card -->
             <div class="lg:col-span-8 flex flex-col gap-4">
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="question-card bg-white rounded-2xl border border-slate-200 overflow-hidden">
                     <!-- Question Top Metadata -->
                     <div class="bg-slate-50/80 border-b border-slate-200 px-5 py-3.5 flex flex-wrap items-center justify-between gap-2">
                         <div class="flex items-center gap-2.5">
-                            <span id="q-number-badge" class="px-3 py-1 rounded-lg bg-indigo-600 text-white font-bold text-sm">Soal No. 1</span>
+                            <span id="q-number-badge" class="px-3 py-1 rounded-lg bg-[#1e3a8a] text-white font-bold text-sm tracking-wide">Soal No. 1</span>
                             <span id="q-type-badge" class="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 border border-indigo-100 font-semibold text-xs">Pilihan Ganda</span>
                         </div>
                         <div class="flex items-center gap-2">
@@ -487,8 +516,8 @@
                         <i class="fa-solid fa-square-poll-vertical"></i>
                     </div>
                     <div>
-                        <h1 class="font-bold text-slate-900 text-sm sm:text-base">Hasil ASAS Ganjil IPS Kelas VIII</h1>
-                        <p id="res-header-school-teacher" class="text-xs text-slate-500">SMPN 3 WAY PENGUBUAN • Guru: NETI LESTARI, S.Pd.</p>
+                        <h1 class="font-bold text-slate-900 text-sm sm:text-base">Hasil Latihan ASAS IPS Kelas VIII</h1>
+                        <p id="res-header-school-teacher" class="text-xs text-slate-500">Latihan ASAS IPS Kelas VIII • Penyusun: NETI LESTARI, S.Pd.</p>
                     </div>
                 </div>
                 <button onclick="returnToHome()" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-semibold transition flex items-center gap-2">
@@ -500,15 +529,17 @@
         <main class="max-w-5xl mx-auto w-full px-4 sm:px-6 py-8 space-y-6">
             <!-- Score Summary Hero Card -->
             <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
-                <div class="bg-gradient-to-r from-indigo-600 to-blue-700 p-6 sm:p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="relative overflow-hidden bg-gradient-to-r from-[#172554] via-[#1e40af] to-[#2563eb] p-6 sm:p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div class="pointer-events-none absolute -right-10 -top-16 w-56 h-56 rounded-full bg-white/10"></div>
+                    <div class="pointer-events-none absolute right-24 -bottom-20 w-40 h-40 rounded-full bg-white/10"></div>
                     <div class="space-y-1 text-center sm:text-left">
                         <div class="inline-flex flex-wrap items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-xs font-semibold">
-                            <span id="res-card-school">SMPN 3 WAY PENGUBUAN</span>
+                            <span id="res-card-school">Latihan ASAS IPS Kelas VIII</span>
                             <span>•</span>
-                            <span id="res-card-teacher">Guru: NETI LESTARI, S.Pd.</span>
+                            <span id="res-card-teacher">Penyusun: NETI LESTARI, S.Pd.</span>
                         </div>
                         <h2 id="res-student-name" class="text-2xl sm:text-3xl font-extrabold mt-2">Nama Siswa</h2>
-                        <p id="res-student-meta" class="text-indigo-100 text-sm">Kelas VIII A • NISN: 123456789</p>
+                        <p id="res-student-meta" class="text-indigo-100 text-sm">Kelas VIII A</p>
                         <p id="res-submit-time" class="text-xs text-indigo-200 pt-1"></p>
                     </div>
                     <div class="bg-white text-slate-900 rounded-2xl p-5 text-center min-w-[160px] shadow-lg">
@@ -574,15 +605,15 @@
     <!-- ==================== VIEW 4: ADMIN DASHBOARD ==================== -->
     <div id="view-admin" class="hidden flex-1 flex flex-col bg-slate-100 min-h-screen">
         <!-- Admin Top Bar -->
-        <header class="bg-slate-900 text-white sticky top-0 z-30 shadow-md">
+        <header class="bg-gradient-to-r from-[#0f1f3d] to-[#1e3a8a] text-white sticky top-0 z-30 shadow-lg">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <div class="w-9 h-9 rounded-xl bg-indigo-500 flex items-center justify-center font-bold">
                         <i class="fa-solid fa-gauge-high"></i>
                     </div>
                     <div>
-                        <h1 class="font-bold text-sm sm:text-base">Dashboard Admin CBT ASAS IPS • <span id="admin-header-school" class="text-indigo-400">SMPN 3 WAY PENGUBUAN</span></h1>
-                        <p class="text-[11px] text-slate-300">Guru Mapel: <strong id="admin-header-teacher" class="text-white">NETI LESTARI, S.Pd.</strong> • MGMP IPS Kab. Lampung Tengah</p>
+                        <h1 class="font-bold text-sm sm:text-base">Dashboard Admin • <span id="admin-header-school" class="text-indigo-400">Latihan ASAS IPS Kelas VIII</span></h1>
+                        <p class="text-[11px] text-slate-300">Penyusun: <strong id="admin-header-teacher" class="text-white">NETI LESTARI, S.Pd.</strong> • IPS Kelas VIII</p>
                     </div>
                 </div>
                 <button onclick="logoutAdmin()" class="px-3.5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs sm:text-sm font-semibold transition flex items-center gap-2">
@@ -591,7 +622,7 @@
             </div>
 
             <!-- Admin Navigation Tabs -->
-            <div class="bg-slate-800 px-4 sm:px-6 border-t border-slate-700 overflow-x-auto">
+            <div class="bg-[#16294d]/90 px-4 sm:px-6 border-t border-white/10 overflow-x-auto">
                 <div class="max-w-7xl mx-auto flex gap-2 py-2 min-w-max">
                     <button onclick="switchAdminTab('results')" id="admin-tab-btn-results" class="admin-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-indigo-600 text-white transition flex items-center gap-2">
                         <i class="fa-solid fa-chart-column"></i> Rekap Hasil & Koreksi Uraian
@@ -600,7 +631,7 @@
                         <i class="fa-solid fa-database"></i> Bank Soal & Kisi-Kisi (45 Soal)
                     </button>
                     <button onclick="switchAdminTab('settings')" id="admin-tab-btn-settings" class="admin-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:bg-slate-700 transition flex items-center gap-2">
-                        <i class="fa-solid fa-sliders"></i> Pengaturan Ujian
+                        <i class="fa-solid fa-sliders"></i> Pengaturan Latihan
                     </button>
                 </div>
             </div>
@@ -612,19 +643,19 @@
             <section id="admin-panel-results" class="space-y-6">
                 <!-- Stats Cards -->
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+                    <div class="stat-card bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
                         <div class="text-xs font-semibold text-slate-400 uppercase">Total Peserta</div>
                         <div id="stat-total-students" class="text-2xl font-extrabold text-slate-900 mt-1">0</div>
                     </div>
-                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+                    <div class="stat-card bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
                         <div class="text-xs font-semibold text-slate-400 uppercase">Rata-Rata Nilai</div>
                         <div id="stat-avg-score" class="text-2xl font-extrabold text-indigo-600 mt-1">0.0</div>
                     </div>
-                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+                    <div class="stat-card bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
                         <div class="text-xs font-semibold text-slate-400 uppercase">Tuntas KKTP</div>
                         <div id="stat-pass-count" class="text-2xl font-extrabold text-emerald-600 mt-1">0</div>
                     </div>
-                    <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
+                    <div class="stat-card bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
                         <div class="text-xs font-semibold text-slate-400 uppercase">Nilai Tertinggi</div>
                         <div id="stat-max-score" class="text-2xl font-extrabold text-amber-600 mt-1">0.0</div>
                     </div>
@@ -634,7 +665,7 @@
                 <div class="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
                     <div class="p-5 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3">
                         <div>
-                            <h2 class="font-bold text-slate-900 text-base">Daftar Hasil Ujian Peserta</h2>
+                            <h2 class="font-bold text-slate-900 text-base">Daftar Hasil Latihan Peserta</h2>
                             <p class="text-xs text-slate-500">Klik tombol "Koreksi / Detail" untuk menilai soal Uraian (No. 41-45) secara manual.</p>
                         </div>
                         <div class="flex flex-wrap items-center gap-2">
@@ -653,7 +684,6 @@
                                     <th class="py-3.5 px-4">No</th>
                                     <th class="py-3.5 px-4">Nama Peserta</th>
                                     <th class="py-3.5 px-4">Kelas</th>
-                                    <th class="py-3.5 px-4">NISN</th>
                                     <th class="py-3.5 px-4 text-center">Objektif (80)</th>
                                     <th class="py-3.5 px-4 text-center">Uraian (20)</th>
                                     <th class="py-3.5 px-4 text-center">Nilai Akhir</th>
@@ -671,7 +701,7 @@
             <section id="admin-panel-bank" class="hidden space-y-5">
                 <div class="bg-white p-5 rounded-2xl border border-slate-200 flex flex-wrap items-center justify-between gap-4">
                     <div>
-                        <h2 class="font-bold text-slate-900 text-base">Bank Soal & Pemetaan Kisi-Kisi MGMP IPS</h2>
+                        <h2 class="font-bold text-slate-900 text-base">Bank Soal & Pemetaan Kisi-Kisi</h2>
                         <p class="text-xs text-slate-500">Kelola 45 butir soal beserta indikator pembelajaran dan bobot penilaiannya.</p>
                     </div>
                     <div class="flex flex-wrap items-center gap-2">
@@ -696,29 +726,25 @@
             <section id="admin-panel-settings" class="hidden max-w-2xl mx-auto">
                 <div class="bg-white rounded-2xl border border-slate-200 p-6 sm:p-8 shadow-xs space-y-6">
                     <div class="border-b border-slate-100 pb-4">
-                        <h2 class="text-lg font-bold text-slate-900">Pengaturan Pelaksanaan Ujian</h2>
-                        <p class="text-xs text-slate-500 mt-0.5">Sesuaikan token, durasi waktu, identitas sekolah, dan kebijakan hasil ujian.</p>
+                        <h2 class="text-lg font-bold text-slate-900">Pengaturan Pelaksanaan Latihan</h2>
+                        <p class="text-xs text-slate-500 mt-0.5">Sesuaikan durasi waktu, nama latihan, dan kebijakan hasil latihan.</p>
                     </div>
 
                     <form id="admin-settings-form" onsubmit="saveAdminSettings(event)" class="space-y-4">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Nama Satuan Pendidikan / Sekolah</label>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Nama Latihan</label>
                                 <input type="text" id="set-school-name" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-semibold focus:border-indigo-500 outline-none">
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Guru Mata Pelajaran / Penyusun</label>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Penyusun</label>
                                 <input type="text" id="set-teacher-name" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-semibold focus:border-indigo-500 outline-none">
                             </div>
                         </div>
 
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Token Ujian Aktif</label>
-                                <input type="text" id="set-token" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-mono uppercase focus:border-indigo-500 outline-none">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Durasi Ujian (Menit)</label>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1.5">Durasi Latihan (Menit)</label>
                                 <input type="number" id="set-duration" min="5" max="240" required class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:border-indigo-500 outline-none">
                             </div>
                             <div>
@@ -737,7 +763,7 @@
                                 <input type="checkbox" id="set-show-review" class="w-4 h-4 accent-indigo-600 rounded">
                                 <div>
                                     <div class="text-sm font-semibold text-slate-800">Tampilkan Pembahasan & Kunci Jawaban ke Siswa</div>
-                                    <div class="text-xs text-slate-500">Jika aktif, siswa dapat melihat kunci jawaban dan pembahasan setelah mengumpulkan ujian.</div>
+                                    <div class="text-xs text-slate-500">Jika aktif, siswa dapat melihat kunci jawaban dan pembahasan setelah mengumpulkan latihan.</div>
                                 </div>
                             </label>
                         </div>
@@ -832,7 +858,7 @@
     <!-- ==================== JAVASCRIPT APPLICATION LOGIC ==================== -->
     <script>
         /**
-         * 1. BANK 45 SOAL SESUAI KISI-KISI ASAS GANJIL IPS KELAS VIII (KAB. LAMPUNG TENGAH 2026/2027)
+         * 1. BANK 45 SOAL LATIHAN ASAS IPS KELAS VIII (2026/2027)
          * Pembobotan Total = 100 Poin:
          * - No. 1 - 20  : Pilihan Ganda (20 soal x 2 poin = 40 poin)
          * - No. 21 - 25 : Benar / Salah (5 soal x 2 poin = 10 poin)
@@ -1509,9 +1535,8 @@
 
         // ==================== DEFAULT SETTINGS & STATE ====================
         const DEFAULT_SETTINGS = {
-            schoolName: 'SMPN 3 WAY PENGUBUAN',
+            schoolName: 'Latihan ASAS IPS Kelas VIII',
             teacherName: 'NETI LESTARI, S.Pd.',
-            token: 'IPS2026',
             durationMinutes: 90,
             kktp: 75,
             adminPassword: 'admin123',
@@ -1546,6 +1571,11 @@
 
                 const savedS = localStorage.getItem(STORAGE_KEYS.SETTINGS);
                 settings = savedS ? { ...DEFAULT_SETTINGS, ...JSON.parse(savedS) } : { ...DEFAULT_SETTINGS };
+                // Migrasi identitas lama: pengaturan tersimpan dari versi CBT SMPN 3 ikut jadi Latihan ASAS IPS Kelas VIII
+                if (/SMPN 3|WAY PENGUBUAN/i.test(settings.schoolName || '')) {
+                    settings.schoolName = DEFAULT_SETTINGS.schoolName;
+                    saveSettingsToStorage();
+                }
 
                 const savedR = localStorage.getItem(STORAGE_KEYS.RESULTS);
                 results = savedR ? JSON.parse(savedR) : [];
@@ -1570,10 +1600,10 @@
         }
 
         function updateLandingUI() {
-            const school = settings.schoolName || 'SMPN 3 WAY PENGUBUAN';
+            const school = settings.schoolName || 'Latihan ASAS IPS Kelas VIII';
             const teacher = settings.teacherName || 'NETI LESTARI, S.Pd.';
 
-            document.title = `CBT ASAS IPS ${school} - ${teacher} (2026/2027)`;
+            document.title = `${school} - ${teacher} (2026/2027)`;
             document.getElementById('nav-school-title').textContent = school;
             document.getElementById('nav-teacher-name').textContent = teacher;
             document.getElementById('hero-school-pill').textContent = `${school} • KURIKULUM MERDEKA`;
@@ -1589,7 +1619,6 @@
 
             document.getElementById('info-duration-display').textContent = `${settings.durationMinutes} Menit`;
             document.getElementById('info-kktp-display').textContent = `KKTP ${settings.kktp}`;
-            document.getElementById('hint-token').textContent = settings.token;
         }
 
         function checkExistingActiveSession() {
@@ -1601,7 +1630,7 @@
                     if (parsed && parsed.student && parsed.endTime > Date.now()) {
                         banner.classList.remove('hidden');
                         document.getElementById('resume-student-info').textContent =
-                            `${parsed.student.name} (${parsed.student.className} - NISN: ${parsed.student.nisn})`;
+                            `${parsed.student.name} (${parsed.student.className})`;
                         return;
                     } else {
                         localStorage.removeItem(STORAGE_KEYS.ACTIVE_EXAM);
@@ -1686,23 +1715,14 @@
             e.preventDefault();
             const name = document.getElementById('student-name').value.trim();
             const className = document.getElementById('student-class').value;
-            const nisn = document.getElementById('student-nisn').value.trim();
-            const tokenInput = document.getElementById('student-token').value.trim().toUpperCase();
-
-            if (!name || !className || !nisn) {
+            if (!name || !className) {
                 showToast('Harap lengkapi semua data peserta!', 'error');
-                return;
-            }
-
-            if (tokenInput !== settings.token.toUpperCase()) {
-                showToast('Token ujian tidak valid! Periksa kembali token dari pengawas.', 'error');
-                document.getElementById('student-token').focus();
                 return;
             }
 
             // Initialize fresh exam session
             activeSession = {
-                student: { name, className, nisn },
+                student: { name, className },
                 startTime: Date.now(),
                 endTime: Date.now() + (settings.durationMinutes * 60 * 1000),
                 currentIndex: 0,
@@ -1720,13 +1740,13 @@
             if (!raw) return;
             activeSession = JSON.parse(raw);
             startExamUI();
-            showToast('Sesi ujian Anda berhasil dipulihkan.', 'info');
+            showToast('Sesi latihan Anda berhasil dipulihkan.', 'info');
         }
 
         function discardSavedExam() {
             localStorage.removeItem(STORAGE_KEYS.ACTIVE_EXAM);
             checkExistingActiveSession();
-            showToast('Sesi sebelumnya dihapus. Silakan mulai ujian baru.', 'info');
+            showToast('Sesi sebelumnya dihapus. Silakan mulai latihan baru.', 'info');
         }
 
         function saveActiveSession() {
@@ -1739,8 +1759,8 @@
         function startExamUI() {
             switchView('view-exam');
             document.getElementById('exam-header-name').textContent = activeSession.student.name;
-            document.getElementById('exam-header-meta').textContent = `Kelas ${activeSession.student.className} • NISN: ${activeSession.student.nisn}`;
-            document.getElementById('exam-header-school').textContent = `${settings.schoolName} • Guru: ${settings.teacherName}`;
+            document.getElementById('exam-header-meta').textContent = `Kelas ${activeSession.student.className}`;
+            document.getElementById('exam-header-school').textContent = `${settings.schoolName} • Penyusun: ${settings.teacherName}`;
 
             renderNavGrids();
             renderCurrentQuestion();
@@ -1757,7 +1777,7 @@
                 if (remainingMs <= 0) {
                     clearInterval(timerInterval);
                     document.getElementById('exam-timer').textContent = '00:00:00';
-                    showToast('Waktu ujian telah habis! Jawaban otomatis dikumpulkan.', 'warning');
+                    showToast('Waktu latihan telah habis! Jawaban otomatis dikumpulkan.', 'warning');
                     finalizeAndSubmitExam();
                     return;
                 }
@@ -1818,7 +1838,7 @@
             const activeTabMap = { PG: 'sec-tab-pg', BS: 'sec-tab-bs', MJ: 'sec-tab-mj', IS: 'sec-tab-is', UR: 'sec-tab-ur' };
             const activeTab = document.getElementById(activeTabMap[q.type]);
             if (activeTab) {
-                activeTab.className = 'sec-tab px-2.5 py-1 rounded-lg font-bold bg-indigo-600 text-white shadow-xs transition';
+                activeTab.className = 'sec-tab px-2.5 py-1 rounded-lg font-bold bg-[#1e40af] text-white shadow-sm transition';
             }
 
             // Stimulus
@@ -2027,7 +2047,7 @@
 
                 let btnStyle = 'bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200';
                 if (isCurrent) {
-                    btnStyle = 'bg-indigo-600 text-white border-indigo-700 ring-2 ring-indigo-300 font-extrabold';
+                    btnStyle = 'bg-[#1e40af] text-white border-[#1e40af] ring-2 ring-blue-200 font-extrabold shadow-sm';
                 } else if (isDoubt) {
                     btnStyle = 'bg-amber-400 text-amber-950 border-amber-500 font-bold';
                 } else if (isAns) {
@@ -2056,13 +2076,13 @@
             const unanswered = questions.filter(q => !isQuestionAnswered(q.no)).length;
             const doubtfulCount = Object.values(activeSession.doubtful).filter(Boolean).length;
 
-            let msg = 'Apakah Anda yakin ingin mengakhiri ujian dan mengumpulkan semua jawaban sekarang?';
+            let msg = 'Apakah Anda yakin ingin mengakhiri latihan dan mengumpulkan semua jawaban sekarang?';
             if (unanswered > 0 || doubtfulCount > 0) {
-                msg = `Perhatian: Masih terdapat ${unanswered} soal belum dijawab dan ${doubtfulCount} soal ditandai ragu-ragu. Yakin tetap ingin mengumpulkan ujian?`;
+                msg = `Perhatian: Masih terdapat ${unanswered} soal belum dijawab dan ${doubtfulCount} soal ditandai ragu-ragu. Yakin tetap ingin mengumpulkan latihan?`;
             }
 
             showConfirmDialog({
-                title: 'Kumpulkan Jawaban Ujian',
+                title: 'Kumpulkan Jawaban Latihan',
                 subtitle: 'Pastikan seluruh soal telah diperiksa',
                 message: msg,
                 okText: 'Ya, Kumpulkan Sekarang',
@@ -2155,18 +2175,18 @@
             activeSession = null;
 
             renderStudentResultView(resultRecord);
-            showToast('Ujian berhasil dikumpulkan!', 'success');
+            showToast('Latihan berhasil dikumpulkan!', 'success');
         }
 
         // ==================== STUDENT RESULT & REVIEW RENDERING ====================
         function renderStudentResultView(record) {
             switchView('view-result');
 
-            document.getElementById('res-header-school-teacher').textContent = `${settings.schoolName} • Guru: ${settings.teacherName}`;
+            document.getElementById('res-header-school-teacher').textContent = `${settings.schoolName} • Penyusun: ${settings.teacherName}`;
             document.getElementById('res-card-school').textContent = settings.schoolName;
-            document.getElementById('res-card-teacher').textContent = `Guru: ${settings.teacherName}`;
+            document.getElementById('res-card-teacher').textContent = `Penyusun: ${settings.teacherName}`;
             document.getElementById('res-student-name').textContent = record.student.name;
-            document.getElementById('res-student-meta').textContent = `Kelas ${record.student.className} • NISN: ${record.student.nisn}`;
+            document.getElementById('res-student-meta').textContent = `Kelas ${record.student.className}`;
             document.getElementById('res-submit-time').textContent = `Waktu Pengumpulan: ${record.submittedAt}`;
             document.getElementById('res-total-score').textContent = record.scores.total.toFixed(1);
 
@@ -2329,8 +2349,7 @@
             const query = (document.getElementById('admin-search-student').value || '').toLowerCase();
             const filtered = results.filter(r =>
                 r.student.name.toLowerCase().includes(query) ||
-                r.student.className.toLowerCase().includes(query) ||
-                r.student.nisn.toLowerCase().includes(query)
+                r.student.className.toLowerCase().includes(query)
             );
 
             // Update Stats
@@ -2356,9 +2375,9 @@
             if (filtered.length === 0) {
                 tbody.innerHTML = `
                     <tr>
-                        <td colspan="9" class="py-10 text-center text-slate-400 text-sm">
+                        <td colspan="8" class="py-10 text-center text-slate-400 text-sm">
                             <i class="fa-solid fa-folder-open text-2xl mb-2 block"></i>
-                            Belum ada data peserta ujian yang tercatat.
+                            Belum ada data peserta latihan yang tercatat.
                         </td>
                     </tr>
                 `;
@@ -2376,7 +2395,6 @@
                         <div class="text-[11px] text-slate-400">${r.submittedAt}</div>
                     </td>
                     <td class="py-3.5 px-4 font-semibold text-slate-700">${r.student.className}</td>
-                    <td class="py-3.5 px-4 font-mono text-xs text-slate-600">${r.student.nisn}</td>
                     <td class="py-3.5 px-4 text-center font-semibold text-slate-700">${r.scores.objective}</td>
                     <td class="py-3.5 px-4 text-center font-semibold text-indigo-600">${r.scores.ur}</td>
                     <td class="py-3.5 px-4 text-center font-extrabold text-base text-slate-900">${r.scores.total.toFixed(1)}</td>
@@ -2404,7 +2422,7 @@
             currentEditingResultId = resultId;
 
             document.getElementById('grade-modal-title').textContent = `Koreksi & Detail: ${record.student.name}`;
-            document.getElementById('grade-modal-subtitle').textContent = `Kelas ${record.student.className} • NISN: ${record.student.nisn} • Skor Objektif (No 1-40): ${record.scores.objective} / 80`;
+            document.getElementById('grade-modal-subtitle').textContent = `Kelas ${record.student.className} • Skor Objektif (No 1-40): ${record.scores.objective} / 80`;
             document.getElementById('grade-modal-live-total').textContent = record.scores.total.toFixed(1);
 
             const body = document.getElementById('grade-modal-body');
@@ -2517,23 +2535,22 @@
 
         function exportResultsCSV() {
             if (results.length === 0) {
-                showToast('Belum ada data hasil ujian untuk diekspor.', 'warning');
+                showToast('Belum ada data hasil latihan untuk diekspor.', 'warning');
                 return;
             }
 
             const titleRows = [
-                `"REKAP NILAI ASESMEN SUMATIF AKHIR SEMESTER (ASAS) GANJIL - IPS KELAS VIII"`,
-                `"SATUAN PENDIDIKAN: ${settings.schoolName}"`,
-                `"GURU MATA PELAJARAN: ${settings.teacherName}"`,
-                `"TAHUN PELAJARAN: 2026/2027 (KISI-KISI MGMP IPS KAB. LAMPUNG TENGAH)"`,
+                `"REKAP NILAI LATIHAN ASAS IPS KELAS VIII"`,
+                `"LATIHAN: ${settings.schoolName}"`,
+                `"PENYUSUN: ${settings.teacherName}"`,
+                `"TAHUN PELAJARAN: 2026/2027"`,
                 ''
             ];
-            const headers = ['No', 'Nama Lengkap', 'Kelas', 'NISN', 'Waktu Kumpul', 'Skor PG (40)', 'Skor BS (10)', 'Skor Menjodohkan (20)', 'Skor Isian (10)', 'Skor Uraian (20)', 'Nilai Akhir (100)', 'Status'];
+            const headers = ['No', 'Nama Lengkap', 'Kelas', 'Waktu Kumpul', 'Skor PG (40)', 'Skor BS (10)', 'Skor Menjodohkan (20)', 'Skor Isian (10)', 'Skor Uraian (20)', 'Nilai Akhir (100)', 'Status'];
             const rows = results.map((r, i) => [
                 i + 1,
                 `"${r.student.name.replace(/"/g, '""')}"`,
                 `"${r.student.className}"`,
-                `"${r.student.nisn}"`,
                 `"${r.submittedAt}"`,
                 r.scores.pg,
                 r.scores.bs,
@@ -2549,10 +2566,10 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `Rekap_Nilai_ASAS_IPS_VIII_SMPN3_WayPengubuan_${new Date().toISOString().slice(0, 10)}.csv`;
+            a.download = `Rekap_Nilai_Latihan_ASAS_IPS_Kelas_VIII_${new Date().toISOString().slice(0, 10)}.csv`;
             a.click();
             URL.revokeObjectURL(url);
-            showToast('File CSV rekap nilai SMPN 3 Way Pengubuan berhasil diunduh.', 'success');
+            showToast('File CSV rekap nilai Latihan ASAS IPS Kelas VIII berhasil diunduh.', 'success');
         }
 
         // ==================== ADMIN TAB 2: QUESTION BANK & KISI-KISI ====================
@@ -2708,7 +2725,7 @@
         function resetQuestionBankDefault() {
             showConfirmDialog({
                 title: 'Reset Bank Soal ke Default',
-                message: 'Seluruh perubahan soal akan dikembalikan ke 45 soal asli sesuai kisi-kisi MGMP IPS Lampung Tengah. Lanjutkan?',
+                message: 'Seluruh perubahan soal akan dikembalikan ke 45 soal asli Latihan ASAS IPS Kelas VIII. Lanjutkan?',
                 okText: 'Reset Soal',
                 okColor: 'bg-amber-600 hover:bg-amber-700',
                 icon: 'fa-rotate-left',
@@ -2725,7 +2742,6 @@
         function populateAdminSettingsForm() {
             document.getElementById('set-school-name').value = settings.schoolName;
             document.getElementById('set-teacher-name').value = settings.teacherName;
-            document.getElementById('set-token').value = settings.token;
             document.getElementById('set-duration').value = settings.durationMinutes;
             document.getElementById('set-kktp').value = settings.kktp;
             document.getElementById('set-admin-pass').value = settings.adminPassword;
@@ -2736,7 +2752,6 @@
             e.preventDefault();
             settings.schoolName = document.getElementById('set-school-name').value.trim();
             settings.teacherName = document.getElementById('set-teacher-name').value.trim();
-            settings.token = document.getElementById('set-token').value.trim().toUpperCase();
             settings.durationMinutes = parseInt(document.getElementById('set-duration').value, 10) || 90;
             settings.kktp = parseInt(document.getElementById('set-kktp').value, 10) || 75;
             settings.adminPassword = document.getElementById('set-admin-pass').value;
@@ -2744,7 +2759,7 @@
 
             saveSettingsToStorage();
             updateLandingUI();
-            showToast('Pengaturan ujian & identitas sekolah berhasil disimpan!', 'success');
+            showToast('Pengaturan latihan berhasil disimpan!', 'success');
         }
 
         function confirmResetAllResults() {
