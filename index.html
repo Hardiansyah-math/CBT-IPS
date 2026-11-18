@@ -771,6 +771,7 @@
                             <input type="url" id="set-cloud-url" placeholder="https://script.google.com/macros/s/.../exec"
                                 class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-mono focus:border-indigo-500 outline-none bg-white">
                             <p class="text-[11px] text-slate-500 leading-relaxed">Ditempel dari Deploy Apps Script (lihat file Code.gs panduan). Selama kosong, hasil hanya tersimpan di perangkat siswa masing-masing.</p>
+                            <p class="text-[11px] font-bold text-emerald-600">Versi file: v2-cloud — alamat Web App sudah tertanam di file ini, kolom di atas harus sudah terisi otomatis.</p>
                             <div class="flex flex-wrap items-center gap-2">
                                 <button type="button" onclick="testCloudConnection()" class="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold transition">
                                     <i class="fa-solid fa-plug-circle-check mr-1"></i> Uji Koneksi Cloud
@@ -1562,7 +1563,7 @@
             kktp: 75,
             adminPassword: 'admin123',
             showReview: true,
-            cloudUrl: ''
+            cloudUrl: 'https://script.google.com/macros/s/AKfycbwU04W21zBC0Sfxc7q3-l2YC82BA22e3_ZX7GSTesZWv-pNg-YYCrvcz3IxbaUwpQtZ/exec'
         };
 
         const STORAGE_KEYS = {
@@ -1597,6 +1598,8 @@
 
                 const savedS = localStorage.getItem(STORAGE_KEYS.SETTINGS);
                 settings = savedS ? { ...DEFAULT_SETTINGS, ...JSON.parse(savedS) } : { ...DEFAULT_SETTINGS };
+                // Alamat cloud bawaan: kalau pengaturan tersimpan lama masih kosong, pakai ini
+                if (!settings.cloudUrl) settings.cloudUrl = DEFAULT_SETTINGS.cloudUrl;
                 // Migrasi identitas lama: pengaturan tersimpan dari versi CBT SMPN 3 ikut jadi Latihan ASAS IPS Kelas VIII
                 if (/SMPN 3|WAY PENGUBUAN/i.test(settings.schoolName || '')) {
                     settings.schoolName = DEFAULT_SETTINGS.schoolName;
